@@ -5,4 +5,4 @@
 ##If you want to avoid typing your password everytime add your public key to pi authorized keys(~/.ssh/authorized_keys)
 DEPENDENCYFILE=deps.txt
 
-cat $DEPENDENCYFILE | xargs -Iz scp z pi@raspberrypi.local:~/SolarPatterns/
+cat $DEPENDENCYFILE | xargs -Iz scp z pi@raspberrypi.local:~/solar-cycle/src/pi/
