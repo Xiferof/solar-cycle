@@ -10,7 +10,7 @@ except:
     print("************************************")
     print("*************WARNING!!!*************")
     print("************************************")
-    print("Either Hardware libraries missing or on Dev Machine... Creating mocking Functions")
+    print("Either Hardware libraries missing or on Dev Machine... mocking Functions")
     print("*************END WARNING************")
     class smbus:
         class SMBus:
@@ -40,4 +40,12 @@ class I2CHandler:
     #@param address the I2C address to write to
     #@param value the byte value to write
     def writeOne(self,address,value):
-        self.bus.write_byte_data(address,0,value)
+        self.bus.write_byte(address,value)
+    def readOne(self,address):
+        response = self.bus.read_byte(address)
+        return response
+    def readResponse(self,address):
+        for x in range(2):
+            res = self.readOne(address)
+            if(not res == 0):
+                print("Not Expcted value!!")
