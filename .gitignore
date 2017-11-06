@@ -1,0 +1,8 @@
+#ignore ByteCode in git
+*.pyc
+#some standard
+*.zip
+*.exe
+*.out
+
+
