@@ -1,0 +1,226 @@
+\usepackage[latin1]{inputenc} 
+%\usepackage[dutch]{babel} does not work with IEEE translations
+%\usepackage{a4wide,times}
+
+
+\usepackage{amsmath} %AMS for formulas
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{bm} %bold mathmode
+
+\usepackage{graphicx} %for images: \includegraphics{}
+\usepackage{wrapfig}  %for images wrapped in text
+\usepackage{epstopdf} %for inserting eps images (from matlab)
+
+%\usepackage[headings,cm]{fullpage} %grotere paginasize
+%\usepackage[margin=1in]{geometry} %custom geometry
+
+%\usepackage[left=2.5cm,right=2.5cm,top=3.5cm,bottom=2.5cm]{geometry}
+
+\usepackage{float}		%%%%% voor [H]
+
+\usepackage{siunitx}
+%\sisetup{load-configurations = abbreviations}
+
+\usepackage{multicol} %multicolom dingen
+
+\usepackage{cases} %voor { met meerdere formules en labels
+
+\usepackage{eso-pic} %Voor TU-bies en blokken
+\usepackage{nextpage}			% Advanced nextpage commands
+\usepackage{picture}
+
+\usepackage{standalone} %voor gefixte \input 
+\usepackage{booktabs} %voor mooie tabellen met \toprule \midrule en \bottomrule
+\usepackage{verbatim} %voor input text
+\let\labelindent\relax %Fix IEEE legacy problems
+\usepackage{enumitem}   % voor mooie enumerate 
+%\usepackage{dcolumn} 	% to center table columns on specific characters
+
+
+
+
+%\usepackage[super]{cite}	%om je cite style aan te passen (\renewcommand{\citeleft}{}\renewcommand{\citeright}{}
+
+
+
+
+
+%\usepackage{multirow} %voor meerdere rijen in tabellen
+\usepackage{fix-cm} %%%%%
+\newcommand{\matlab}{{\textsc{matlab }}} %MATLAB moet geschreven worden in smallcaps. Dit defineerd het commando \matlab dat dit doet
+
+
+\usepackage{calc}
+
+%\usepackage{caption}
+%\usepackage{subcaption}
+
+\usepackage[T1,hyphens]{url}
+\usepackage{hyperref}
+\usepackage[nameinlink]{cleveref} %\Cref for \autoref with a capital
+
+%\autoref{} dingen
+%\AtBeginDocument{%otherwise it won't work in preamble
+%\renewcommand{\tableautorefname}{table}
+%\renewcommand{\figureautorefname}{figure}
+%\renewcommand{\chapterautorefname}{chapter}
+%\renewcommand{\sectionautorefname}{section}
+%\renewcommand{\subsectionautorefname}{section}
+%\renewcommand{\subsubsectionautorefname}{section}
+%\renewcommand{\equationautorefname}{equation}
+%\renewcommand\lstlistingname{Code}
+%}
+
+
+%dit is zodat hyperlinks niet blauw zijn.
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+%tikz:
+\usepackage{pgf}
+\usepackage{pgfplots}
+\usepackage{pgfgantt}
+\pgfplotsset{compat=1.7}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata,shapes,calc,positioning,decorations.markings}
+
+
+%\usepackage{subfigure}
+
+\usepackage{xifthen}
+
+\usepackage{comment}
+
+
+
+
+%define TU colors:
+\usepackage{xcolor}
+
+
+\definecolor{tublauw}{RGB}{000,166,214}%for backwards compatibility
+
+
+%TU corporate colors
+\definecolor{tucyaan}{RGB}{000,166,214}
+\definecolor{tuzwart}{RGB}{000,000,000}
+\definecolor{tuwit}{RGB}{255,255,255}
+%TU basiskleuren
+\definecolor{tuzeegroen}{RGB}{102,188,170}
+\definecolor{tupaars}{RGB}{15,17,80}
+\definecolor{tugroen}{RGB}{0,122,133}
+\definecolor{tuturquoise}{RGB}{0,147,171}
+\definecolor{tudonkerblauw}{RGB}{0,43,96}
+\definecolor{tuhemelblauw}{RGB}{119,192,215}
+
+%TU accentkleuren
+\definecolor{tulavendel}{RGB}{123,160,201}
+\definecolor{tufuchsia}{RGB}{161,0,88}
+\definecolor{tuoranje}{RGB}{236,127,44}
+\definecolor{tuhelgroen}{RGB}{173,198,16}
+\definecolor{tuwarmpaars}{RGB}{131,38,124}
+\definecolor{tugeel}{RGB}{247,235,144}
+
+
+%colors for syntax highlighting:
+\colorlet{keyword}{blue!100!black!80}
+\colorlet{comment}{green!50!black!100}
+
+
+
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+
+%Listing setup:
+\usepackage{listings}
+
+\begin{comment}%some styles for VHDL, propably not the best way to do it.
+\lstset{numbers		= left,			%
+		numberstyle	= \tiny,		%
+		numbersep	= 5pt,			%
+		language	= VHDL,			%
+		breaklines	= true,			%
+		showspaces	= false,		%
+		showstringspaces= false}
+
+\lstdefinestyle{vhdl}{
+  language     = VHDL,
+  basicstyle   = \ttfamily,
+  keywordstyle = \color{keyword}\bfseries,
+  commentstyle = \color{dkgreen}
+}
+\end{comment}
+
+
+%basicstyle=\ttfamily\footnotesize
+\lstset{language=Matlab,
+keywords={break,case,catch,continue,else,elseif,end,for,function,global,if,otherwise,persistent,return,switch,try,while},
+   basicstyle=\ttfamily\footnotesize,
+   keywordstyle=\color{blue},
+   commentstyle=\color{dkgreen},
+   stringstyle=\color{red},
+   numbers=left,
+   numberstyle=\tiny\color{gray},
+   stepnumber=1,
+   numbersep=10pt,
+   backgroundcolor=\color{white},
+   tabsize=4,
+   showspaces=false,
+   showstringspaces=false}
+
+
+
+%Voor laagstreepje in Section headers: 
+%dit geeft 1 warning
+%\usepackage[T1]{fontenc}
+%\catcode`_=12
+%\begingroup\lccode`~=`_\lowercase{\endgroup\let~\sb}
+%\mathcode`_="8000
+
+
+%overline above text outside math
+%\makeatletter
+%\newcommand*{\textoverline}[1]{$\overline{\hbox{#1}}\m@th$}
+%\makeatother
+
+
+
+
+%Custom references:
+\newcommand{\bigref}[1]			%result:"subsection 1.1: ‘Introduction’"
+{\autoref{#1}: `\nameref{#1}'}
+
+\newcommand{\bigrefs}[1]		%result:"1.1: ‘Introduction’"
+{\ref{#1}: `\nameref{#1}'}
+
+\newcommand{\secref}[1]		%result:"1.1: ‘Introduction’"
+{\ref{#1}: `\nameref{#1}'}
+
+
+
+
+%non-breaking math mode
+\newcommand{\nbmm}[1]{%
+  {}$% get out of math
+  \kern-2\mathsurround % in case it's non zero
+  $% reenter math
+  \binoppenalty10000 \relpenalty10000 #1% typeset the subformula
+  {}$% get out of math
+  \kern-2\mathsurround % in case it's non zero
+  $% reenter math for the rest of the formula
+}
+
+%\setlength\parindent{0pt} %no par indent
+%\usepackage[parfill]{parskip}
+
+
+%\renewcommand{\thefootnote}{\roman{footnote}}
+
