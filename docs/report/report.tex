@@ -71,17 +71,50 @@ Internet of Things, IoT, Solar, Solar Modules, Irradiance Prediction, Solar Powe
 \end{IEEEkeywords}
 
 \section{Introduction}\label{sec:introduction}
-\IEEEPARstart{T}{here} are a ...
-\cite{SoCeBa}
+\IEEEPARstart{T}{here} are a more and more photovoltaic systems deployed world wide every day.
+This is all done with the mindset to harvest as much solar energy as possible in order to provide a sustainable electricity source for our increasing needs.
+Experts in this area see it as a real posibility that in the future our energy grid will be based on a lot of smaller electricity sources like these home PV systems, the so called micro-grid.
+One of the main drawbacks of these micro-grid is controllability, because of the sheer number of contributers.
+Currently there is a lot of rotating mass connected to the energy grid (because of all the heavy metal turbines), tinny fluctuations in the power flow of the grid are smoothened by this energy buffer.
+Bigger fluctations are controlled by the network operator by increasing or decreasing the power generator at the different sites.
+Keeping this in mind, a big disadvantage can be seen when looking back at the home PV systems.
+To start with, there will be almost no intertia in a micro-grid system and on top of that the power generation is heavily depedent on the current irradiance by the sun and cloud movement.
+So this method of generating energy is way less controllable and also really unpredictable.
+This proposes some challenges in the future development of the power grid.
+
+Anonther major drawback of current photovoltaic systems is the great impact of partial shading of a panel on the whole system.
+Because all the cells are connected in series, a smaller generated current in one cell decreases the current through all cells.
+A lot of research is done in this area to solve this not so well known problem, all possibilties are discussed in \cite{SoCeBa}.
+The authors of this thesis also propose and design an implementation to solve this problem.
+In general, most implementations use a microcontroller which optimizes the power output in someway.
+With current trends of all devices being more and more connected to the internet (the Internet of Things era), this might also provide the posibilities to provide a solution for the problem of the predictability of micro-grid PV systems.
+
+In the future, all the PV modules will be 'smart' (i.e. have a microcontroller in them), this can be used to collect huge ammounts of data of the current irradiance.
+Using all this data and the geographical locations, the resolution of cloud movement predictions can be enhanced greatly.
+These more accurate cloud predictions or models can be fed back into the system in order to make a short term prediction of the power generation of these small PV systems.
 
 \section{Problem Definition}\label{sec:problem_definition}
 \IEEEPARstart{O}{f} course it is 
 
 
-\section{Important Factors or Something Else}\label{sec:factors}
-\IEEEPARstart{D}{ifferent} aspects of the destination country have to be looked during the first orientation phase of offshoring. Below are 5 sections which each highlight a different topic, within these topics multiple important factors will be elaborated on.
+\section{Implementation}\label{sec:implementation}
+\IEEEPARstart{D}{ifferent} 
 
-\subsection{Just a random SubSection}\label{sec:factors-partoffactors}
+\subsection{Just a random SubSection}\label{sec:implementation-algorithm}
+
+
+\section{Experimental Setup}\label{sec:experiment}
+\IEEEPARstart{T}{he} goal of this experiment is to provide a prototype showing that this method could work in the future.
+The main goal of this Experimental Setup thus is to just show the working version of the algorithm.
+
+\subsection{Hardware}\label{sec:implementation-hardware}
+Because the main goal of this prototype is to show that the algorithm works, a lot of simplifications can be made on the hardware level.
+For example expensive PV cells can be replaced by cheap Light Dependant Resistors (LDRs).
+A bunch of cheap Arduino Nanos can be used to represent multiple houses in the grid
+
+\subsection{Algorithm}\label{sec:implementation-algorithm}
+
+
 
 
 \section{Conclusion}\label{sec:conclusion}
