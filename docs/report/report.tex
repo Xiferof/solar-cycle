@@ -118,7 +118,7 @@ Meteorology instutes often have supercomputers with 10s or 100s thousand of core
 When this application would be used in a full scale or real world setting, algorithms can of course use differential equations or machine learning.
 However because we are keeping the number of nodes relatively low, equally spaced and are using a controlled test setup, many simplifications can be done to the algorithm to the point where just a simple loop can be used.
 Inside this loop, the correlation between the different time domain signals measured at the different houses can be found.
-When there is a correlation between these signals, it can be stated that the same cloud was above both clouds.
+When there is a correlation between these signals, it can be stated that the same cloud was above both nodes.
 This correlation can be implemented using a convolution, the location of the highest peak gives the time difference between the signals.
 This time difference is the key towards prediction of course.
 All the different arrival times can be fitted, using this fit a prediction can be made.
@@ -191,7 +191,7 @@ The next sections discuss different subparts of the hardware implementation.
 \subsection{Nodes}
 In real-life this future system would consist of many nodes connected to a network.
 These can be either single smart modules, or the data of the panels can already be merged by the MPPT and inverter of the system, which can act as a gateway to the network.
-For this prototype, there barely any requirements regarding the microcontroller.
+For this prototype, there are barely any requirements regarding the microcontroller.
 It should just have at least 1 ADC channel for the sensor and a method for communication.
 To save on costs, a bunch of cheap Arduino Nano's from ebay are used.
 To demonstrate the prototype, we will just use 9 nodes, in case this all works fine and there is more time, we already have the hardware for 25 nodes.
@@ -241,7 +241,7 @@ In this prototype setup, something more simple can be used such as I2C.
 \subsection{System Integration}
 As the main server in this system, a Raspberry Pi is used because of its perfect of this application since it has a full Linux OS and multiple connectivity interfaces.
 To first test the basic setup functionality, a Python script was created that runs on the Pi and sends and receives data over the I2C bus.
-The algorithm however runs in \matlab, this gab can be bridged by something like a log file or something.
+The algorithm however runs in \matlab, this gap can be filled by forming a file stream communication between the two scripts or generating executable code from \matlab that can be run in a python environment.
 However, \matlab offers a really good solution for this with their `Hardware Support Packages'.
 After installing the package for your specific hardware platform as an Add-On to your \matlab, you get almost full control over the hardware platform directly from within \matlab running on your computer.
 (\matlab supports many different hardware platforms like Raspberry Pi, Arduinos, Lego but also many instrumentation devices.)
@@ -256,7 +256,7 @@ Using this package, communicating with the different nodes was as easy as just u
 \end{figure}
 
 For the Arduino Nano, a header is designed that has the LDR, but also 3 LEDs (Green, Orange, Red) which can be used as status indicators, also the I2C connections are on this header.
-The schematic of the header can be seen in \autoref{fig:schematic}, the soldered hardware looks like \autoref{fig:nano}.
+The schematic of the header can be seen in \autoref{fig:schematic}, the soldered hardware looks like \autoref{fig:header}.
 
 \begin{figure}[H]
 \centering
