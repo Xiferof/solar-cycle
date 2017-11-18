@@ -1,0 +1,52 @@
+% Tikz settings and styles for the stack drawings of Casper:
+\pgfdeclarelayer{backgroundstack}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{backgroundstack,background,main,foreground}
+
+% Define a few styles and constants
+\tikzstyle{sensor}=[draw, fill=blue!20, text width=5em, text centered, minimum height=0.75cm,node distance=0.25cm]
+\tikzstyle{sensorbig}=[sensor, minimum height=2cm]
+\tikzstyle{sensormedium}=[sensor, minimum height=1cm,anchor=south, text width=3em]%yshift=-0.75cm
+\tikzstyle{stack} = [fill=blue!50, draw=black]
+\tikzstyle{part} = [fill=yellow!20,rounded corners, draw=black!50, dashed]
+\begin{tikzpicture}
+    \node (gui) [sensorbig] {PC \\ \matlab};
+    \node (master) [sensorbig, right = of gui] {Raspberry Pi};
+    \node (slavescoord) [right = of gui,yshift=-0.75cm,xshift=1cm,node distance=0.25cm] {};
+    \node (slave1) [sensormedium, right = of slavescoord] {House\textsubscript{1}};
+    \node (slave2) [sensormedium, right = of slave1] {House\textsubscript{2}};
+    \node (slaven) [sensormedium, right = of slave2] {House\textsubscript{n}};
+
+    \node (label) [above = 0.5cm of slave2] {I2C};
+
+    % \node (led1) [sensor, below = of slave1] {LED\textsubscript{1}};
+    % \node (led2) [sensor, below = of slave2] {LED\textsubscript{2}};
+    % \node (ledn) [sensor, below = of slaven] {LED\textsubscript{n}};
+
+    \draw[line width=0.5mm] (gui) -- (master);
+
+    % \draw[double] (slave1) -- (led1);
+    % \draw[double] (slave2) -- (led2);
+    % \draw[double] (slaven) -- (ledn);
+
+    \draw (master)         -| (slave1);
+    \draw (master-|slave1) -| (slave2);
+    \draw (master-|slave2) -| (slaven);
+
+    % \begin{pgfonlayer}{background}
+    %     % Compute a few helper coordinates
+    %     \path (gui.west |- gui.north)+(-0.25,0.5) node (a) {};
+    %     \path (kernel.east |- kernel.south)+(0.25,-0.5) node (b) {};
+
+    %     \path[part] (a) rectangle (b);
+    %     \path (frame.north |- a.east) node [anchor=north] (datastruct) {DataStruct};
+    % \end{pgfonlayer}
+
+    % \begin{pgfonlayer}{backgroundstack}
+    %     \path (a)+(-0.25,0.5) node (astack) {};
+    %     \path (b)+(0.25,-0.5) node (bstack) {};
+
+    %     \path[stack] (astack) rectangle (bstack);
+    % \end{pgfonlayer}
+\end{tikzpicture}

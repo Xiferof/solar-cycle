@@ -1,0 +1,41 @@
+\begin{tikzpicture}
+\setpathasarrows
+	\matrix (chart)
+	[
+		matrix of nodes,
+		column sep      = 1em,
+		row sep         = 4ex,
+		column 1/.style = {nodes={treenode}},
+		% column 3/.style = {nodes={treenode}}
+	]
+{
+|[action]|{get samples} \\
+|[decision]|{if(cloudDetected)} \\
+|[action]|{get cloudShape} \\
+|[action]|{find correlation (cloudShape vs other houses)} \\
+|[action]|{find peaks (i.e. arrival times)} \\
+|[action]|{fit arrival times} \\
+|[action]|{extrapolate for ETAs} \\
+|[action]|{send ETAs} \\
+};
+
+\coordinate[below = 0.5cm of chart-8-1] (p1) {};
+\coordinate[right = 0.5cm of chart-2-1] (p2) {};
+\coordinate[above = 0.5cm of chart-1-1] (p3) {};
+
+%flow down:
+\draw[->] (chart-1-1) -- (chart-2-1);
+\draw[->] (chart-2-1) -- (chart-3-1);
+\draw[->] (chart-3-1) -- (chart-4-1);
+\draw[->] (chart-4-1) -- (chart-5-1);
+\draw[->] (chart-5-1) -- (chart-6-1);
+\draw[->] (chart-6-1) -- (chart-7-1);
+\draw[->] (chart-7-1) -- (chart-8-1);
+
+%loopback:
+\draw[->] (chart-8-1) -- (p1) -| (p2) |- (p3) -| (chart-1-1.north);
+
+%else path
+\draw[] (chart-2-1.west) |- node[right,near start] {no} (p3);
+
+\end{tikzpicture}

@@ -89,7 +89,29 @@
 \usepackage{pgfgantt}
 \pgfplotsset{compat=1.7}
 \usepackage{tikz}
-\usetikzlibrary{arrows,automata,shapes,calc,positioning,decorations.markings}
+\usetikzlibrary{arrows.meta,automata,shapes,calc,positioning,decorations.markings,matrix}
+\newcommand{\setpathasarrows}{\tikzstyle{every path}=[auto,line width=1.5pt,line cap=round,line join=round]}
+
+
+%TODO fix black diamond in decision center
+\tikzset{%for flow charts casper
+    treenode/.style = {shape=rectangle,
+                        draw=black,anchor=center,
+                        fill=tucyaan,align=center,
+                        line width=1pt,
+                        text centered
+                        %inner sep=1ex},
+                        },
+    start/.style = {treenode, circle, inner sep=0pt,minimum width=1.5cm},
+    decision/.style = {treenode, diamond,text badly centered,inner sep=0pt,minimum width = 1.8cm,text width=4cm,aspect=4},
+    action/.style   = {treenode,        align=center,minimum width = 1.8cm,text width=3cm},
+    action_wide/.style   = {treenode,        align=center,minimum width = 1.8cm,text width=4cm},
+    statedashed/.style={state,circle,dashed,draw=black,fill=none},
+    goto/.style = {treenode,isosceles triangle,align=center,text width=3cm},
+    hidden/.style = {treenode,coordinate,fill=none,anchor=center,minimum width = 0.5cm},
+    line_custom/.style = {-,thick,auto,draw=black,line width=1.5pt},
+    >={Latex[width=3mm,length=3mm]}
+}
 
 
 %\usepackage{subfigure}
@@ -203,9 +225,6 @@ keywords={break,case,catch,continue,else,elseif,end,for,function,global,if,other
 
 \newcommand{\secref}[1]		%result:"1.1: ‘Introduction’"
 {\ref{#1}: `\nameref{#1}'}
-
-
-
 
 %non-breaking math mode
 \newcommand{\nbmm}[1]{%
