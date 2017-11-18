@@ -82,18 +82,18 @@ One of the main drawbacks of these micro-grid is controllability, because of the
 Currently there is a lot of rotating mass connected to the energy grid (because of all the heavy metal turbines), tinny fluctuations in the power flow of the grid are smoothened by this energy buffer.
 Bigger fluctations are controlled by the network operator by increasing or decreasing the power generator at the different sites.
 Keeping this in mind, a big disadvantage can be seen when looking back at the home PV systems.
-To start with, there will be almost no intertia in a micro-grid system and on top of that the power generation is heavily depedent on the current irradiance by the sun and cloud movement.
+To start with, there will be almost no inertia in a micro-grid system and on top of that the power generation is heavily dependent on the current irradiance by the sun and cloud movement.
 So this method of generating energy is way less controllable and also really unpredictable.
 This proposes some challenges in the future development of the power grid.
 
-Anonther major drawback of current photovoltaic systems is the great impact of partial shading of a panel on the whole system.
+Another major drawback of current photovoltaic systems is the great impact of partial shading of a panel on the whole system.
 Because all the cells are connected in series, a smaller generated current in one cell decreases the current through all cells.
-A lot of research is done in this area to solve this not so well known problem, all possibilties are discussed in \cite{SoCeBa}.
+A lot of research is done in this area to solve this not so well known problem, all possibilities are discussed in \cite{SoCeBa}.
 The authors of this thesis also propose and design an implementation to solve this problem.
 In general, most implementations use a microcontroller which optimizes the power output in someway.
-With current trends of all devices being more and more connected to the internet (the Internet of Things era), this might also provide the posibilities to provide a solution for the problem of the predictability of micro-grid PV systems.
+With current trends of all devices being more and more connected to the internet (the Internet of Things era), this might also provide the possibilities to provide a solution for the problem of the predictability of micro-grid PV systems.
 
-In the future, all the PV modules will be 'smart' (i.e. have a microcontroller in them), this can be used to collect huge ammounts of data of the current irradiance.
+In the future, all the PV modules will be 'smart' (i.e. have a microcontroller in them), this can be used to collect huge amounts of data of the current irradiance.
 Using all this data and the geographical locations, the resolution of cloud movement predictions can be enhanced greatly.
 These more accurate cloud predictions or models can be fed back into the system in order to make a short term prediction of the power generation of these small PV systems.
 
@@ -102,11 +102,7 @@ The algorithm designed to the prediction and the simulation to verify it are exp
 The different subparts of the test setup are explained in \nameref{sec:experiment} after which some conclusions are drawn.
 
 \section{Problem Definition}\label{sec:problem_definition}
-\IEEEPARstart{O}{f} course it is 
-TODO: move part of introduction to here?
-Some parts of the intro are too detailed for the introduction (because they are not directly related to the prototype, however they are needed to show the importance of the system we made).
-
-\clearpage
+\IEEEPARstart{T}{o} smoothen the effect of the unpredictability of the sun and cloud on a solar based power grid, we need to have a network of communicating nodes. This communication will facilitate cloud prediction algorithms to be run that will allow these nodes to be more prepared for power fluctuations. The goal is to create an algorithm that will pool that from each node and provide a prediction to the nodes of the cloud coverage. In addition to the algorithm we also show a hardware implementation to showcase the working implementation of the algorithm.\clearpage
 
 \section{Implementation}\label{sec:implementation}
 \IEEEPARstart{A}{s} the main purpose of this research is to show the viability of the proposed prediction method, the designed algorithm is explained in the next section.
