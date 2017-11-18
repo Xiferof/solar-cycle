@@ -99,7 +99,7 @@ These more accurate cloud predictions or models can be fed back into the system 
 
 In this report the future problems mentioned above will be further explained in \bigref{sec:problem_definition}.
 The algorithm designed to the prediction and the simulation to verify it are explained in the \nameref{sec:implementation} part.
-The different subparts of the test setup are explained in \nameref{sec:experiment} after which some conclusions are drawn.
+The different subparts of the test setup are explained in \nameref{sec:experiment} after which some reflections on this project are made and some conclusions are drawn.
 
 \section{Problem Definition}\label{sec:problem_definition}
 \IEEEPARstart{T}{o} smoothen the effect of the unpredictability of the sun and cloud on a solar based power grid, we need to have a network of communicating nodes. This communication will facilitate cloud prediction algorithms to be run that will allow these nodes to be more prepared for power fluctuations. The goal is to create an algorithm that will pool that from each node and provide a prediction to the nodes of the cloud coverage. In addition to the algorithm we also show a hardware implementation to showcase the working implementation of the algorithm.\clearpage
@@ -268,19 +268,31 @@ The schematic of the header can be seen in \autoref{fig:schematic}, the soldered
     \label{fig:header}
 \end{figure}
 
-% \begin{figure}[H]
-% \centering
-%     \includegraphics[width=0.5\textwidth]{./resources/nano.png}
-%     \caption{Close-up of the header}
-%     \label{fig:nano}
-% \end{figure}
-
 \begin{figure}[H]
 \centering
     \includegraphics[width=0.45\textwidth]{./resources/nanos.jpg}
     \caption{9 of the Nanos with their headers.}
     \label{fig:nanos}
 \end{figure}
+
+\vspace{1cm}
+\section{Discussion}\label{sec:discussion}
+\IEEEPARstart{R}{eflecting} back on this project there are two different perspectives that can be taken.
+The first perspective is of course directly looking at the success and achievements of this project.
+This would give quite a positive view, we managed to get a working prototype to show the solution we first proposed.
+The other perspective would be from a more negative side, judging the quality of the project.
+However when giving critique on this, one has to bear in mind the short time period of this project as well as the available resources.
+Money wise there were no limitations, because the price for one house/node is around 2 euros.
+However time and knowledge were more critical, since we all three are Embedded Systems students we did not have any knowledge or experience in the mathematical aspects of pattern recognition and prediction.
+If one wants to make a full scale version, a first step could be a bachelor graduation project at computer science.
+
+There were no big technical problems throughout this project.
+Of course every project has its challenges, but all of those were solved.
+The main problems are what now are the conditions for a succesfull prediction.
+Initially we wanted 3x3 houses and we had the hardware for an extension to a 5x5 grid.
+But making the algorithm spatially independent was too difficult, so we simplified the setup to a linear row of houses.
+This directly solved the relatively large number of houses the algorithm need in order to start the prediction.
+This is because we use the most basic form of prediction, being just a fit and extrapolation.
 
 \section{Conclusion}\label{sec:conclusion}
 \IEEEPARstart{I}{t} can indeed be concluded that the proposed solution can indeed help solving future problems in the power grid.
